@@ -52,8 +52,12 @@ function lineChart(labels, values, opts) {
   let dots = '';
   values.forEach(function (v, i) {
     if (i === 0 || i === values.length - 1 || v === hi || v === lo) {
+      // Label ujung dijangkar ke dalam (start/end) supaya tidak menabrak
+      // label sumbu-y di kiri.
+      const anchor = i === 0 ? 'start' : (i === values.length - 1 ? 'end' : 'middle');
+      const lx = i === 0 ? xs[i] + 8 : (i === values.length - 1 ? xs[i] - 8 : xs[i]);
       dots += '<circle cx="' + xs[i].toFixed(1) + '" cy="' + y(v).toFixed(1) + '" r="3.5" fill="' + color + '"/>'
-        + '<text x="' + xs[i].toFixed(1) + '" y="' + (y(v) - 9).toFixed(1) + '" font-size="12" font-weight="700" fill="' + INK + '" text-anchor="middle">' + fmtID(v, o.dec === undefined ? 1 : o.dec) + '</text>';
+        + '<text x="' + lx.toFixed(1) + '" y="' + (y(v) - 9).toFixed(1) + '" font-size="12" font-weight="700" fill="' + INK + '" text-anchor="' + anchor + '">' + fmtID(v, o.dec === undefined ? 1 : o.dec) + '</text>';
     }
   });
   let xl = '';
