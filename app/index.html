@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AngkaKita — Statistik Indonesia</title>
+<meta name="description" content="Indonesia dalam angka — data resmi BPS 2025 + pembaruan November 2026, 38 provinsi, alat banding, dan metodologi yang jujur.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="site">
+  <div class="wrap">
+    <div class="head-row">
+      <a class="brand" href="#/beranda">
+        <span class="brand-name">Angka<em>Kita</em></span>
+        <span class="brand-tag">Statistik Indonesia</span>
+      </a>
+      <div class="search-box">
+        <input id="indicator-search" type="search" placeholder="Cari indikator… contoh: inflasi, IPM, ekspor" aria-label="Cari indikator" autocomplete="off">
+        <div id="search-results" class="search-results" hidden></div>
+      </div>
+    </div>
+    <nav class="main" id="main-nav" aria-label="Navigasi utama"></nav>
+  </div>
+</header>
+<div class="update-strip" id="update-strip"></div>
+<main>
+  <div class="wrap" id="view"></div>
+</main>
+<footer class="site">
+  <div class="wrap">
+    <p><b>AngkaKita — Statistik Indonesia.</b> Data resmi BPS, disajikan independen. Situs ini bukan situs BPS dan tidak berafiliasi dengan Badan Pusat Statistik.</p>
+    <p>Setiap angka menampilkan sumber dan tahunnya. Tahun referensi utama 2025; dua angka 2026 (IPM dan TPT Agustus 2026) hanya tampil di strip pembaruan dan halaman terkait, selalu dengan label tahunnya.</p>
+    <p>Angka dibulatkan dari publikasi asli; lihat halaman Data &amp; Metodologi untuk nomor BRS dan tanggal rilis tiap sumber.</p>
+  </div>
+</footer>
+<script src="data.js"></script>
+<script src="charts.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
